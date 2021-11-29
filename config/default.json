@@ -1,0 +1,5 @@
+{
+  "port": 5000,
+  "jwtSecret": "anosmia fortify tactual dorsad is ohmmeter",
+  "mongoUri": "mongodb+srv://Ilia:<a1nimlist>@cluster0.2e8ul.mongodb.net/app?retryWrites=true&w=majority"
+}
