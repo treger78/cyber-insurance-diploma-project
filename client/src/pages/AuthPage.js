@@ -45,7 +45,9 @@ export const AuthPage = () => {
   */
 
   return (
-    <div>AuthPage</div>
+    <div className="container">
+      <h1>AuthPage</h1>
+    </div>
     /*
     <div className="row">
       <div className="col s6 offset-s3">

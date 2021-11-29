@@ -21,7 +21,9 @@ function App() {
   */
 
   return (
-    <div>Hello</div>
+    <div className="container">
+      <h1>Hello</h1>
+    </div>
     /*
     <AuthContext.Provider value={{
       token, login, logout, userId, isAuthenticated
