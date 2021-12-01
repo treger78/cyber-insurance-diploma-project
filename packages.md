@@ -15,3 +15,6 @@ npm i -D cross-env
 client:
 npm i materialize-css@next
 npm i react-router-dom@5.1.2
+
+В package.json после свойства "eslintConfig" добавить новое свойство:
+"proxy": "http://localhost:5000",
