@@ -43,7 +43,7 @@ export const SignUpPage = () => {
   return (
     <div className="row">
       <div className="col s6 offset-s3">
-        <h2>Регистрация</h2>
+        <h2 className="center-align">Регистрация</h2>
         <div className="card blue darken-1">
           <div className="card-content white-text">
             <span className="card-title">Данные пользователя</span>

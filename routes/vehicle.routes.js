@@ -3,12 +3,24 @@ const VehiclePolice = require('../models/VehiclePolice');
 const auth = require('../middleware/auth.middleware');
 const router = Router();
 
-router.post('/vehicle', auth, async (req, res) => {
+router.post('/', auth, async (req, res) => {
   try {
-    const { form } = req.body;
+    const { registerSign, VIN, vehicleCategory, marka, model, enginePower, releaseDate } = req.body;
+
+    const conclusionDate = new Date().toISOString().substr(0, 10);
+    const expirationDate = conclusionDate.replace(new Date().getFullYear(), new Date().getFullYear() + 1);
+
+    let policeID = Math.floor(Math.random() * (99999999 - 10000000 + 1)) + 10000000;
+    let existing = await VehiclePolice.findOne({ policeID });
+
+    while (existing) {
+      policeID = Math.floor(Math.random() * (99999999 - 10000000 + 1)) + 10000000;
+      existing = await VehiclePolice.findOne({ policeID });
+    }
 
     const vehiclePolice = new VehiclePolice({
-      form//, to, from, owner: req.user.userId
+      userID: req.user.userId, policeID, conclusionDate, expirationDate,
+      registerSign, VIN, vehicleCategory, marka, model, enginePower, releaseDate
     });
 
     await vehiclePolice.save();
@@ -19,14 +31,26 @@ router.post('/vehicle', auth, async (req, res) => {
   }
 });
 
-router.get('/vehicle', auth, async (req, res) => {
+/*
+router.get('/', auth, async (req, res) => {
   try {
-    const vehiclePolice = await VehiclePolice.find({ userID: req.user.userId });
+    const vehiclePolices = await VehiclePolice.find({ userID: req.user.userId });
+
+    res.json(vehiclePolices);
+  } catch(e) {
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова.' });
+  }
+});
+
+router.get('/:id', auth, async (req, res) => {
+  try {
+    const vehiclePolice = await VehiclePolice.findById(req.params.id);
 
     res.json(vehiclePolice);
   } catch(e) {
     res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова.' });
   }
 });
+*/
 
 module.exports = router;
