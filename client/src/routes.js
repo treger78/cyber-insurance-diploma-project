@@ -6,6 +6,9 @@ import { AuthPage } from './pages/AuthPage';
 import { PersonalChangePage } from './pages/PersonalChangePage';
 import { PersonalPage } from './pages/PersonalPage';
 import { VehiclePage } from './pages/VehiclePage';
+import { TripsPage } from './pages/TripsPage';
+import { EstatePage } from './pages/EstatePage';
+import { HealthPage } from './pages/HealthPage';
 
 export const useRoutes = isAuthenticated => {
   if (isAuthenticated) {
@@ -25,6 +28,15 @@ export const useRoutes = isAuthenticated => {
         </Route>
         <Route path="/vehicle" exact>
           <VehiclePage />
+        </Route>
+        <Route path="/trips" exact>
+          <TripsPage />
+        </Route>
+        <Route path="/estate" exact>
+          <EstatePage />
+        </Route>
+        <Route path="/health" exact>
+          <HealthPage />
         </Route>
         <Redirect to="/" />
       </Switch>

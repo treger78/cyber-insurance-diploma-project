@@ -1,19 +1,11 @@
 @import "~materialize-css/dist/css/materialize.min.css";
+@import "./styles/auth.css";
 
-input.yellow-input {
-  border-bottom: 1px solid #fff !important;
-  box-shadow: 0 1px 0 0 #fff !important;
+html {
+  background-color: #F6F4F1;
 }
 
-input.yellow-input+label {
-  color: #fff !important;
-}
-
-input.yellow-input:focus+label {
-  color: #ffeb3b !important;
-}
-
-input.yellow-input:focus {
-  border-bottom: 1px solid #ffeb3b !important;
-  box-shadow: 0 1px 0 0 #ffeb3b !important;
+main {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }

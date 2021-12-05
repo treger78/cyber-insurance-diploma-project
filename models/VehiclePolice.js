@@ -4,7 +4,7 @@ const InsurancePolice = require('./InsurancePolice');
 
 /*
 InsurancePolice includes:
-  userID: { type: Number, required: true },
+  userID: { type: Types.ObjectId, ref: 'User' },
   policeID: { type: Number, required: true },
   conclusionDate: { type: Date, required: true },
   expirationDate: { type: Date, required: true }
