@@ -9,51 +9,42 @@ export const MainPage = () => {
 
   return (
 		<div>
-				<h3 className="center-align">Рассчитать стоимость страховки и купить онлайн</h3>
-
-				<div className="row center-align" style={{marginTop: '4rem'}}>
-
-					<div className="col s4">
-						<NavLink to="/vehicle">
-							<div>
-								<img src={ car } alt="" />
-								<h5>Транспортные средства</h5>
-							</div>
-						</NavLink>
-					</div>
-					<div className="col s4">
-						<NavLink to="/trips">
-							<div>
-								<img src={ suitcase } alt="" />
-								<h5>Путешествия</h5>
-							</div>
-						</NavLink>
-					</div>
-					<div className="col s4">
-						<NavLink to="/estate">
-							<div>
-								<img src={ safe } alt="" />
-								<h5>Имущество</h5>
-							</div>
-						</NavLink>
-					</div>
-					<div className="col s4">
-						<NavLink to="/health">
-							<div>
-								<img src={ health } alt="" />
-								<h5>Здоровье</h5>
-							</div>
-						</NavLink>
-					</div>
-
+			<div className="calculateInsurancePrice">
+				<h4>Рассчитать стоимость страховки и купить онлайн</h4>
+				<div className="calculateInsuranceType">
+					<NavLink to="/vehicle" className="black-text text-lighten-3">
+						<div>
+							<img src={ car } alt="" />
+							<h5>Транспортные средства</h5>
+						</div>
+					</NavLink>
+					<NavLink to="/trips" className="black-text text-lighten-3">
+						<div>
+							<img src={ suitcase } alt="" />
+							<h5>Путешествия</h5>
+						</div>
+					</NavLink>
+					<NavLink to="/estate" className="black-text text-lighten-3">
+						<div>
+							<img src={ safe } alt="" />
+							<h5>Имущество</h5>
+						</div>
+					</NavLink>
+					<NavLink to="/health" className="black-text text-lighten-3">
+						<div>
+							<img src={ health } alt="" />
+							<h5>Здоровье</h5>
+						</div>
+					</NavLink>
 				</div>
+			</div>
 
 			<div className="yoursPolices">
 				<h4>Мои полисы</h4>
 				<div className="polices">
-					<div>Продлить</div>
-					<div>Активировать</div>
-					<a href="buy.html"><div>Купить</div></a>
+					<div><b>Продлить</b></div>
+					<div><b>Активировать</b></div>
+					<a href="buy.html" className="black-text text-lighten-3"><div><b>Купить</b></div></a>
 				</div>
 			</div>
 			<div className="ourServicesSection">
@@ -67,12 +58,12 @@ export const MainPage = () => {
 				<div className="ourServicesList">
 					<h5>Наши услуги</h5>
 					<ul>
-						<li>Автострахование</li>
-						<li>Страхование недвижимости</li>
-						<li>Страхование движимого имущества</li>
-						<li>Страхование путешественников</li>
-						<li>Страхование пассажиров</li>
-						<li>Страхование здоровья</li>
+						<li><span>{'>'}</span> Транспортное страхование</li>
+						<li><span>{'>'}</span> Страхование недвижимости</li>
+						<li><span>{'>'}</span> Страхование движимого имущества</li>
+						<li><span>{'>'}</span> Страхование путешественников</li>
+						<li><span>{'>'}</span> Страхование пассажиров</li>
+						<li><span>{'>'}</span> Страхование здоровья</li>
 					</ul>
 				</div>
 			</div>

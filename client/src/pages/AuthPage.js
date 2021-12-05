@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useHttp } from '../hooks/http.hook';
 import { useMessage } from '../hooks/message.hook';
+import { NavLink } from "react-router-dom";
 
 export const AuthPage = () => {
   const auth = useContext(AuthContext);
@@ -82,6 +83,10 @@ export const AuthPage = () => {
             </button>
           </div>
         </div>
+        <div className="newUser">
+          <div>Новый пользователь?</div>
+          <div><NavLink to="/signup">Зарегистрироваться</NavLink></div>
+			  </div>
       </div>
     </div>
   );

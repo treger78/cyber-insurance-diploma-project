@@ -1,5 +1,6 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 @import "./styles/auth.css";
+@import "./styles/main.css";
 
 html {
   background-color: #F6F4F1;

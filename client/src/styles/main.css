@@ -1,0 +1,92 @@
+.calculateInsurancePrice, .yoursPolices {
+  text-align: center;
+}
+
+.calculateInsurancePrice h4 {
+  margin: 1.5rem;
+}
+
+.calculateInsuranceType {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.calculateInsuranceType div {
+  margin: 0.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.calculateInsuranceType div:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
+.yoursPolices h4 {
+  margin: 1rem;
+}
+
+.polices {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.polices div {
+  border: 1px solid black;
+  height: 10rem;
+  width: 15rem;
+  margin: 0.5rem;
+  line-height: 10rem;
+  border-radius: 0.5rem;
+  background-color: #ebebeb;
+}
+
+.polices div:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
+.ourServicesSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ourServicesSection h4 {
+  width: 100%;
+  text-align: center;
+  margin: 1rem;
+}
+
+.ourServicesDescription {
+  width: 48%;
+  text-align: justify;
+}
+
+.ourServicesDescription p, .ourServicesList li {
+  margin: 1%;
+}
+
+.ourServicesList {
+  margin: 2rem;
+}
+
+.ourServicesList span {
+  color: brown;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .ourServicesDescription {
+    width: 85%;
+  }
+}
