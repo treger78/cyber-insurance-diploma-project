@@ -40,11 +40,10 @@ export const MainPage = () => {
 			</div>
 
 			<div className="yoursPolices">
-				<h4>Мои полисы</h4>
+				<h4>Страховые полисы</h4>
 				<div className="polices">
-					<div><b>Продлить</b></div>
-					<div><b>Активировать</b></div>
-					<a href="buy.html" className="black-text text-lighten-3"><div><b>Купить</b></div></a>
+					<NavLink to="/personal" className="black-text text-lighten-3"><div><b>Мои полисы</b></div></NavLink>
+					<NavLink to="/vehicle" className="black-text text-lighten-3"><div><b>Оформить</b></div></NavLink>
 				</div>
 			</div>
 			<div className="ourServicesSection">

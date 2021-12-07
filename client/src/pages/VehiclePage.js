@@ -84,7 +84,7 @@ export const VehiclePage = () => {
     <div>
       <div className="row">
         <div className="col s6 offset-s3">
-          <h2 className="center-align">Рассчитать ОСАГО</h2>
+          <h2 className="center-align">Рассчитать и оформить ОСАГО</h2>
           <div className="card blue darken-1">
             <div className="card-content white-text">
               <div>

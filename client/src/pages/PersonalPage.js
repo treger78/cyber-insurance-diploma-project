@@ -84,7 +84,7 @@ export const PersonalPage = () => {
       </table>
 
       <div className="actionButtons">
-        <button className="blue darken-1"><NavLink to="/personal-change" style={{ color: "white" }}>Изменить данные</NavLink></button>
+        <button className="blue darken-1"><NavLink to="/personal-change" style={{ color: "white" }}>Изменить персональные данные</NavLink></button>
         <button className="blue darken-1"><a href="/" onClick={ logoutHandler } style={{ color: "white" }}>Выйти</a></button>
       </div>
 
