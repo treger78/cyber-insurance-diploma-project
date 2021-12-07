@@ -1,15 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-/*
-import React, { useContext } from "react";
-import { NavLink, useHistory } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
-*/
 
 export const Navbar = () => {
-  // const history = useHistory();
-  // const auth = useContext(AuthContext);
-
   document.addEventListener('DOMContentLoaded', function() {
     const elems = document.querySelectorAll('.sidenav');
     window.M.Sidenav.init(elems);

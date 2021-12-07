@@ -2,14 +2,11 @@ import React, { useCallback, useContext, useEffect, useState } from "react";
 import { useHistory, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useHttp } from '../hooks/http.hook';
-import { useMessage } from '../hooks/message.hook';
 import { Loader } from '../components/Loader';
-
 
 export const PersonalPage = () => {
   const history = useHistory();
   const auth = useContext(AuthContext);
-  const message = useMessage();
 
   const [ user, setUser ] = useState([]);
   const { loading, request } = useHttp();
