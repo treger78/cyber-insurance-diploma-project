@@ -10,3 +10,18 @@ main {
   padding-left: 5rem;
   padding-right: 5rem;
 }
+
+.actionButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.actionButtons button {
+  height: 3rem;
+  margin: 3rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
