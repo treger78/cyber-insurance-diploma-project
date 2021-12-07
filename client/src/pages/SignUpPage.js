@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-// import { AuthContext } from '../context/AuthContext';
+import React, { useEffect, useState } from 'react';
+import { NavLink } from "react-router-dom";
 import { useHttp } from '../hooks/http.hook';
 import { useMessage } from '../hooks/message.hook';
 
 export const SignUpPage = () => {
-  // const auth = useContext(AuthContext);
   const message = useMessage();
 
   const { loading, request, error, clearError } = useHttp();
@@ -148,13 +147,15 @@ export const SignUpPage = () => {
             </div>
           </div>
           <div className="card-action">
-            <button
-              className="btn yellow darken-4"
-              onClick={ signUpHandler }
-              disabled={ loading }
-            >
-              Зарегистрироваться
-            </button>
+            <NavLink to="/auth">
+              <button
+                className="btn yellow darken-4"
+                onClick={ signUpHandler }
+                disabled={ loading }
+              >
+                Зарегистрироваться
+              </button>
+            </NavLink>
           </div>
         </div>
       </div>
