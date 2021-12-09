@@ -43,7 +43,6 @@ export const MainPage = () => {
 				<h4>Страховые полисы</h4>
 				<div className="polices">
 					<NavLink to="/personal" className="black-text text-lighten-3"><div><b>Мои полисы</b></div></NavLink>
-					<NavLink to="/vehicle" className="black-text text-lighten-3"><div><b>Оформить</b></div></NavLink>
 				</div>
 			</div>
 			<div className="ourServicesSection">
@@ -61,7 +60,6 @@ export const MainPage = () => {
 						<li><span>{'>'}</span> Страхование недвижимости</li>
 						<li><span>{'>'}</span> Страхование движимого имущества</li>
 						<li><span>{'>'}</span> Страхование путешественников</li>
-						<li><span>{'>'}</span> Страхование пассажиров</li>
 						<li><span>{'>'}</span> Страхование здоровья</li>
 					</ul>
 				</div>

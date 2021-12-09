@@ -31,7 +31,7 @@ export const EstatePage = () => {
   const calculateHandler = async () => {
     try {
       // https://www.alfastrah.ru/individuals/housing/municipal/
-      const costSquareMeter = 31.20; //стоимость одного дня страхования
+      const costSquareMeter = 31.20; //стоимость страхования за один метр квадратный
 
       if (form.objectAddress === '' || form.objectArea === '') {
         return message('Заполните все поля формы!');

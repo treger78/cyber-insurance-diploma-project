@@ -12,6 +12,7 @@ app.use('/api/vehicle', require('./routes/vehicle.routes'));
 app.use('/api/personal', require('./routes/personal.routes'));
 app.use('/api/trip', require('./routes/trip.routes'));
 app.use('/api/estate', require('./routes/estate.routes'));
+app.use('/api/health', require('./routes/health.routes'));
 /*
 app.use('/t', require('./routes/redirect.routes'));
 */
