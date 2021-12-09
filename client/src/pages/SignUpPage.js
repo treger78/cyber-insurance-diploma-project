@@ -91,7 +91,7 @@ export const SignUpPage = () => {
                 <input
                   placeholder="Введите Дату рождения"
                   id="birthDate"
-                  type="text"
+                  type="date"
                   name="birthDate"
                   className="yellow-input"
                   value={ form.birthDate }

@@ -171,7 +171,7 @@ export const VehiclePage = () => {
                   <input
                     placeholder="Введите Датe выпуска ТС"
                     id="releaseDate"
-                    type="text"
+                    type="date"
                     name="releaseDate"
                     className="yellow-input"
                     value={ form.releaseDate }
