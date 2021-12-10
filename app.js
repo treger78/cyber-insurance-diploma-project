@@ -13,9 +13,6 @@ app.use('/api/personal', require('./routes/personal.routes'));
 app.use('/api/trip', require('./routes/trip.routes'));
 app.use('/api/estate', require('./routes/estate.routes'));
 app.use('/api/health', require('./routes/health.routes'));
-/*
-app.use('/t', require('./routes/redirect.routes'));
-*/
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname), 'client', 'build'));

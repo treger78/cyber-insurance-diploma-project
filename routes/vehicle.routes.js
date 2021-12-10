@@ -31,26 +31,4 @@ router.post('/', auth, async (req, res) => {
   }
 });
 
-/*
-router.get('/', auth, async (req, res) => {
-  try {
-    const vehiclePolices = await VehiclePolice.find({ userID: req.user.userId });
-
-    res.json(vehiclePolices);
-  } catch(e) {
-    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова.' });
-  }
-});
-
-router.get('/:id', auth, async (req, res) => {
-  try {
-    const vehiclePolice = await VehiclePolice.findById(req.params.id);
-
-    res.json(vehiclePolice);
-  } catch(e) {
-    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова.' });
-  }
-});
-*/
-
 module.exports = router;
