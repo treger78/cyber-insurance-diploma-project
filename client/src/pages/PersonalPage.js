@@ -9,6 +9,7 @@ export const PersonalPage = () => {
   const auth = useContext(AuthContext);
 
   const [ user, setUser ] = useState([]);
+  const [ vehiclePolice, setVehiclePolice ] = useState([]);
   const { loading, request } = useHttp();
   const { token } = useContext(AuthContext);
 
@@ -29,9 +30,20 @@ export const PersonalPage = () => {
     } catch (e) {}
   }, [token, request]);
 
+  const fetchVehiclePolices = useCallback(async () => {
+    try {
+      const fetched = await request('/api/personal/vehiclePolice', 'GET', null, {
+        Authorization: `Bearer ${token}`
+      });
+
+      setVehiclePolice(fetched);
+    } catch (e) {}
+  }, [token, request]);
+
   useEffect(() => {
     fetchUser();
-  }, [fetchUser]);
+    fetchVehiclePolices();
+  }, [fetchUser, fetchVehiclePolices]);
 
   if (loading) {
     return <Loader />
@@ -74,9 +86,16 @@ export const PersonalPage = () => {
 
       <table className="responsive-table">
         <tbody>
-          <tr>
-            <td>{ user.polices }</td>
-          </tr>
+          {
+            vehiclePolice.map((police, index) => {
+              return (
+                <tr key={ police._id }>
+                  <td>{ index + 1 }</td>
+                  <td>{ police.policeID }</td>
+                </tr>
+              );
+            })
+          }
         </tbody>
       </table>
 
