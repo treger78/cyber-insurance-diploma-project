@@ -94,7 +94,7 @@ export const PersonalPage = () => {
 
   return (
     <div>
-      <h1 className="center-align">Личный кабинет</h1>
+      <h2 className="center-align">Личный кабинет</h2>
 
       { !loading }
 
@@ -127,8 +127,8 @@ export const PersonalPage = () => {
 
       <h3 className="center-align">Ваши страховые полисы</h3>
 
+      <h5 className="center-align">Страховые полисы "Транспортные средства":</h5>
       <table className="responsive-table">
-        <thead className="center-align">Страховые полисы "Транспортные средства":</thead>
         <tbody>
           <tr className="personalPoliceThead">
             <td>№ п/п</td>
@@ -149,8 +149,10 @@ export const PersonalPage = () => {
             })
           }
         </tbody>
+      </table>
 
-        <thead className="center-align">Страховые полисы "Путешествия":</thead>
+      <h5 className="center-align">Страховые полисы "Путешествия":</h5>
+      <table className="responsive-table">
         <tbody>
           <tr className="personalPoliceThead">
             <td>№ п/п</td>
@@ -171,8 +173,10 @@ export const PersonalPage = () => {
             })
           }
         </tbody>
+      </table>
 
-        <thead className="center-align">Страховые полисы "Имущество":</thead>
+      <h5 className="center-align">Страховые полисы "Имущество":</h5>
+      <table className="responsive-table">
         <tbody>
           <tr className="personalPoliceThead">
             <td>№ п/п</td>
@@ -193,8 +197,10 @@ export const PersonalPage = () => {
             })
           }
         </tbody>
+      </table>
 
-        <thead className="center-align">Страховые полисы "Здоровье":</thead>
+      <h5 className="center-align">Страховые полисы "Здоровье":</h5>
+      <table className="responsive-table">
         <tbody>
           <tr className="personalPoliceThead">
             <td>№ п/п</td>

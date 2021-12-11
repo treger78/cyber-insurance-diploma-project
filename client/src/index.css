@@ -17,7 +17,7 @@ main {
 }
 
 .actionButtons button {
-  height: 3rem;
+  min-height: 3rem;
   margin: 3rem;
   padding-right: 1rem;
   padding-left: 1rem;
