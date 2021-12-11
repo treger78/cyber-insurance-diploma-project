@@ -10,7 +10,7 @@ export const MainPage = () => {
   return (
 		<div>
 			<div className="calculateInsurancePrice">
-				<h4>Рассчитать стоимость страховки и купить онлайн</h4>
+				<h4>Рассчитать стоимость страховки и оформить онлайн</h4>
 				<div className="calculateInsuranceType">
 					<NavLink to="/vehicle" className="black-text text-lighten-3">
 						<div>

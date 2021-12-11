@@ -38,7 +38,7 @@ export const AuthPage = () => {
 
   return (
     <div className="row">
-      <div className="col s6 offset-s3">
+      <div className="container">
         <h2 className="center-align">Авторизация</h2>
         <div className="card blue darken-1">
           <div className="card-content white-text">
@@ -83,7 +83,7 @@ export const AuthPage = () => {
             </button>
           </div>
         </div>
-        <div className="newUser">
+        <div>
           <div>Новый пользователь?</div>
           <div><NavLink to="/signup">Зарегистрироваться</NavLink></div>
 			  </div>

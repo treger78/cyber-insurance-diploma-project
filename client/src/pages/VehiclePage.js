@@ -83,8 +83,8 @@ export const VehiclePage = () => {
   return (
     <div>
       <div className="row">
-        <div className="col s6 offset-s3">
-          <h2 className="center-align">Рассчитать и оформить ОСАГО</h2>
+        <div className="container">
+          <h3 className="center-align">Рассчитать и оформить ОСАГО</h3>
           <div className="card blue darken-1">
             <div className="card-content white-text">
               <div>
