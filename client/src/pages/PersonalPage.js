@@ -122,6 +122,10 @@ export const PersonalPage = () => {
             <td>Мобильный телефон</td>
             <td>{ user.mobilePhone }</td>
           </tr>
+          <tr>
+            <td>E-mail</td>
+            <td>{ user.email }</td>
+          </tr>
         </tbody>
       </table>
 

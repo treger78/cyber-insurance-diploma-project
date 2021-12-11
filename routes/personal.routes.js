@@ -17,6 +17,46 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
+router.post('/', auth, async (req, res) => {
+  try {
+    const user = await User.findOne({ _id: req.user.userId });
+
+    const { secondName, firstName, patronymic, birthDate, mobilePhone, email } = req.body;
+
+    if (user) {
+      if (secondName) {
+        user.secondName = secondName;
+      }
+
+      if (firstName) {
+        user.firstName = firstName;
+      }
+
+      if (patronymic) {
+        user.patronymic = patronymic;
+      }
+
+      if (birthDate) {
+        user.birthDate = birthDate;
+      }
+
+      if (mobilePhone) {
+        user.mobilePhone = mobilePhone;
+      }
+
+      if (email) {
+        user.email = email;
+      }
+    }
+
+    await user.save();
+
+    res.json(user);
+  } catch(e) {
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова.' });
+  }
+});
+
 router.get('/vehiclePolice', auth, async (req, res) => {
   try {
     const vehiclePolices = await VehiclePolice.find({ userID: req.user.userId });
