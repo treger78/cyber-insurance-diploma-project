@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useHttp } from '../hooks/http.hook';
 import { useMessage } from '../hooks/message.hook';
@@ -131,10 +131,10 @@ export const PersonalChangePage = () => {
                 </div>
               </div>
 
-              <div className="card-action">
+              <div className="actionButtons">
                 <Link to="/personal">
                   <button
-                    className="btn yellow darken-4"
+                    style={{ backgroundColor: "#f57f17", color: "white" }}
                     onClick={ sendHandler }
                     disabled={ loading }
                   >
