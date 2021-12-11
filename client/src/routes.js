@@ -9,6 +9,7 @@ import { VehiclePage } from './pages/VehiclePage';
 import { TripsPage } from './pages/TripsPage';
 import { EstatePage } from './pages/EstatePage';
 import { HealthPage } from './pages/HealthPage';
+import { DetailPage } from './pages/DetailPage';
 
 export const useRoutes = isAuthenticated => {
   if (isAuthenticated) {
@@ -37,6 +38,9 @@ export const useRoutes = isAuthenticated => {
         </Route>
         <Route path="/health" exact>
           <HealthPage />
+        </Route>
+        <Route path="/detail/:id" exact>
+          <DetailPage />
         </Route>
         <Redirect to="/" />
       </Switch>

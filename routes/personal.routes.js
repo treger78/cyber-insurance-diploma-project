@@ -27,6 +27,16 @@ router.get('/vehiclePolice', auth, async (req, res) => {
   }
 });
 
+router.get('/vehiclePolice/:id', auth, async (req, res) => {
+  try {
+    const vehiclePolice = await VehiclePolice.findById(req.params.id);
+
+    res.json(vehiclePolice);
+  } catch(e) {
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова.' });
+  }
+});
+
 router.get('/tripPolice', auth, async (req, res) => {
   try {
     const tripPolices = await TripPolice.find({ userID: req.user.userId });

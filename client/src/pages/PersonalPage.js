@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import { useHistory, NavLink } from "react-router-dom";
+import { useHistory, NavLink, Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useHttp } from '../hooks/http.hook';
 import { Loader } from '../components/Loader';
@@ -135,6 +135,7 @@ export const PersonalPage = () => {
             <td>Номер полиса</td>
             <td>Дата заключения</td>
             <td>Дата окончания</td>
+            <td>Подробная информация</td>
           </tr>
           {
             vehiclePolice.map((police, index) => {
@@ -144,6 +145,9 @@ export const PersonalPage = () => {
                   <td>{ police.policeID }</td>
                   <td>{ new Date(police.conclusionDate).toLocaleDateString() }</td>
                   <td>{ new Date(police.expirationDate).toLocaleDateString() }</td>
+                  <td>
+                    <Link to={`/detail/${police._id}`}>Просмотр</Link>
+                  </td>
                 </tr>
               );
             })
@@ -159,6 +163,7 @@ export const PersonalPage = () => {
             <td>Номер полиса</td>
             <td>Дата заключения</td>
             <td>Дата окончания</td>
+            <td>Подробная информация</td>
           </tr>
           {
             tripPolice.map((police, index) => {
@@ -168,6 +173,9 @@ export const PersonalPage = () => {
                   <td>{ police.policeID }</td>
                   <td>{ new Date(police.conclusionDate).toLocaleDateString() }</td>
                   <td>{ new Date(police.expirationDate).toLocaleDateString() }</td>
+                  <td>
+                    <Link to={`/detail/${police._id}`}>Просмотр</Link>
+                  </td>
                 </tr>
               );
             })
@@ -183,6 +191,7 @@ export const PersonalPage = () => {
             <td>Номер полиса</td>
             <td>Дата заключения</td>
             <td>Дата окончания</td>
+            <td>Подробная информация</td>
           </tr>
           {
             estatePolice.map((police, index) => {
@@ -192,6 +201,9 @@ export const PersonalPage = () => {
                   <td>{ police.policeID }</td>
                   <td>{ new Date(police.conclusionDate).toLocaleDateString() }</td>
                   <td>{ new Date(police.expirationDate).toLocaleDateString() }</td>
+                  <td>
+                    <Link to={`/detail/${police._id}`}>Просмотр</Link>
+                  </td>
                 </tr>
               );
             })
@@ -207,6 +219,7 @@ export const PersonalPage = () => {
             <td>Номер полиса</td>
             <td>Дата заключения</td>
             <td>Дата окончания</td>
+            <td>Подробная информация</td>
           </tr>
           {
             healthPolice.map((police, index) => {
@@ -216,6 +229,9 @@ export const PersonalPage = () => {
                   <td>{ police.policeID }</td>
                   <td>{ new Date(police.conclusionDate).toLocaleDateString() }</td>
                   <td>{ new Date(police.expirationDate).toLocaleDateString() }</td>
+                  <td>
+                    <Link to={`/detail/${police._id}`}>Просмотр</Link>
+                  </td>
                 </tr>
               );
             })
