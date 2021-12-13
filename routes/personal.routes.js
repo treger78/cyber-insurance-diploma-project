@@ -21,33 +21,9 @@ router.post('/', auth, async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.user.userId });
 
-    const { secondName, firstName, patronymic, birthDate, mobilePhone, email } = req.body;
-
-    if (user) {
-      if (secondName) {
-        user.secondName = secondName;
-      }
-
-      if (firstName) {
-        user.firstName = firstName;
-      }
-
-      if (patronymic) {
-        user.patronymic = patronymic;
-      }
-
-      if (birthDate) {
-        user.birthDate = birthDate;
-      }
-
-      if (mobilePhone) {
-        user.mobilePhone = mobilePhone;
-      }
-
-      if (email) {
-        user.email = email;
-      }
-    }
+    Object.keys(req.body).forEach(key => {
+      user[key] = req.body[key];
+    });
 
     await user.save();
 
@@ -87,6 +63,16 @@ router.get('/tripPolice', auth, async (req, res) => {
   }
 });
 
+router.get('/tripPolice/:id', auth, async (req, res) => {
+  try {
+    const tripPolice = await TripPolice.findById(req.params.id);
+
+    res.json(tripPolice);
+  } catch(e) {
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова.' });
+  }
+});
+
 router.get('/estatePolice', auth, async (req, res) => {
   try {
     const estatePolices = await EstatePolice.find({ userID: req.user.userId });
@@ -97,11 +83,31 @@ router.get('/estatePolice', auth, async (req, res) => {
   }
 });
 
+router.get('/estatePolice/:id', auth, async (req, res) => {
+  try {
+    const estatePolice = await EstatePolice.findById(req.params.id);
+
+    res.json(estatePolice);
+  } catch(e) {
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова.' });
+  }
+});
+
 router.get('/healthPolice', auth, async (req, res) => {
   try {
     const healthPolices = await HealthPolice.find({ userID: req.user.userId });
 
     res.json(healthPolices);
+  } catch(e) {
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова.' });
+  }
+});
+
+router.get('/healthPolice/:id', auth, async (req, res) => {
+  try {
+    const healthPolice = await HealthPolice.findById(req.params.id);
+
+    res.json(healthPolice);
   } catch(e) {
     res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова.' });
   }
