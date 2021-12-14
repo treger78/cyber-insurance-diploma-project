@@ -27,6 +27,7 @@ export const PersonalChangePage = () => {
 
   useEffect(() => {
     fetchUser();
+    return () => { setUser([]) }
   }, [fetchUser]);
 
   const changeHandler = event => {
