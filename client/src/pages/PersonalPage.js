@@ -23,70 +23,39 @@ export const PersonalPage = () => {
     history.push('/');
   }
 
-  const fetchUser = useCallback(async () => {
+  const fetchData = useCallback(async () => {
     try {
-      const fetched = await request('/api/personal', 'GET', null, {
+      const fetchedUser = await request('/api/personal', 'GET', null, {
         Authorization: `Bearer ${token}`
       });
 
-      setUser(fetched);
-    } catch (e) {}
-  }, [token, request]);
-
-  const fetchVehiclePolices = useCallback(async () => {
-    try {
-      const fetched = await request('/api/personal/vehiclePolice', 'GET', null, {
+      const fetchedVehiclePolice = await request('/api/personal/vehiclePolice', 'GET', null, {
         Authorization: `Bearer ${token}`
       });
 
-      setVehiclePolice(fetched);
-    } catch (e) {}
-  }, [token, request]);
-
-  const fetchTripPolices = useCallback(async () => {
-    try {
-      const fetched = await request('/api/personal/tripPolice', 'GET', null, {
+      const fetchedTripPolice = await request('/api/personal/tripPolice', 'GET', null, {
         Authorization: `Bearer ${token}`
       });
 
-      setTripPolice(fetched);
-    } catch (e) {}
-  }, [token, request]);
-
-  const fetchEstatePolices = useCallback(async () => {
-    try {
-      const fetched = await request('/api/personal/estatePolice', 'GET', null, {
+      const fetchedEstatePolice = await request('/api/personal/estatePolice', 'GET', null, {
         Authorization: `Bearer ${token}`
       });
 
-      setEstatePolice(fetched);
-    } catch (e) {}
-  }, [token, request]);
-
-  const fetchHealthPolices = useCallback(async () => {
-    try {
-      const fetched = await request('/api/personal/healthPolice', 'GET', null, {
+      const fetchedHealthPolice = await request('/api/personal/healthPolice', 'GET', null, {
         Authorization: `Bearer ${token}`
       });
-
-      setHealthPolice(fetched);
+      
+      setUser(fetchedUser);
+      setVehiclePolice(fetchedVehiclePolice);
+      setTripPolice(fetchedTripPolice);
+      setEstatePolice(fetchedEstatePolice);
+      setHealthPolice(fetchedHealthPolice);
     } catch (e) {}
   }, [token, request]);
 
   useEffect(() => {
-    fetchUser();
-    fetchVehiclePolices();
-    fetchTripPolices();
-    fetchEstatePolices();
-    fetchHealthPolices();
-  }, 
-  [
-    fetchUser, 
-    fetchVehiclePolices, 
-    fetchTripPolices, 
-    fetchEstatePolices, 
-    fetchHealthPolices
-  ]);
+    fetchData();
+  }, [fetchData]);
 
   if (loading) {
     return <Loader />
