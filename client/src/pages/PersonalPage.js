@@ -1,8 +1,9 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import { useHistory, NavLink, Link } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useHttp } from '../hooks/http.hook';
 import { Loader } from '../components/Loader';
+import { InsurancePoliceCard } from '../components/InsurancePoliceCard';
 
 export const PersonalPage = () => {
   const history = useHistory();
@@ -101,116 +102,16 @@ export const PersonalPage = () => {
       <h3 className="center-align">Ваши страховые полисы</h3>
 
       <h5 className="center-align">Страховые полисы "Транспортные средства":</h5>
-      <table className="responsive-table">
-        <tbody>
-          <tr className="personalPoliceThead">
-            <td>№ п/п</td>
-            <td>Номер полиса</td>
-            <td>Дата заключения</td>
-            <td>Дата окончания</td>
-            <td>Подробная информация</td>
-          </tr>
-          {
-            vehiclePolice.map((police, index) => {
-              return (
-                <tr key={ police._id }>
-                  <td>{ index + 1 }</td>
-                  <td>{ police.policeID }</td>
-                  <td>{ new Date(police.conclusionDate).toLocaleDateString() }</td>
-                  <td>{ new Date(police.expirationDate).toLocaleDateString() }</td>
-                  <td>
-                    <Link to={`/detail/${police._id}`}>Просмотр</Link>
-                  </td>
-                </tr>
-              );
-            })
-          }
-        </tbody>
-      </table>
+      { <InsurancePoliceCard insurancePolice={ vehiclePolice } /> }
 
       <h5 className="center-align">Страховые полисы "Путешествия":</h5>
-      <table className="responsive-table">
-        <tbody>
-          <tr className="personalPoliceThead">
-            <td>№ п/п</td>
-            <td>Номер полиса</td>
-            <td>Дата заключения</td>
-            <td>Дата окончания</td>
-            <td>Подробная информация</td>
-          </tr>
-          {
-            tripPolice.map((police, index) => {
-              return (
-                <tr key={ police._id }>
-                  <td>{ index + 1 }</td>
-                  <td>{ police.policeID }</td>
-                  <td>{ new Date(police.conclusionDate).toLocaleDateString() }</td>
-                  <td>{ new Date(police.expirationDate).toLocaleDateString() }</td>
-                  <td>
-                    <Link to={`/detail/${police._id}`}>Просмотр</Link>
-                  </td>
-                </tr>
-              );
-            })
-          }
-        </tbody>
-      </table>
+      { <InsurancePoliceCard insurancePolice={ tripPolice } /> }
 
       <h5 className="center-align">Страховые полисы "Имущество":</h5>
-      <table className="responsive-table">
-        <tbody>
-          <tr className="personalPoliceThead">
-            <td>№ п/п</td>
-            <td>Номер полиса</td>
-            <td>Дата заключения</td>
-            <td>Дата окончания</td>
-            <td>Подробная информация</td>
-          </tr>
-          {
-            estatePolice.map((police, index) => {
-              return (
-                <tr key={ police._id }>
-                  <td>{ index + 1 }</td>
-                  <td>{ police.policeID }</td>
-                  <td>{ new Date(police.conclusionDate).toLocaleDateString() }</td>
-                  <td>{ new Date(police.expirationDate).toLocaleDateString() }</td>
-                  <td>
-                    <Link to={`/detail/${police._id}`}>Просмотр</Link>
-                  </td>
-                </tr>
-              );
-            })
-          }
-        </tbody>
-      </table>
+      { <InsurancePoliceCard insurancePolice={ estatePolice } /> }
 
       <h5 className="center-align">Страховые полисы "Здоровье":</h5>
-      <table className="responsive-table">
-        <tbody>
-          <tr className="personalPoliceThead">
-            <td>№ п/п</td>
-            <td>Номер полиса</td>
-            <td>Дата заключения</td>
-            <td>Дата окончания</td>
-            <td>Подробная информация</td>
-          </tr>
-          {
-            healthPolice.map((police, index) => {
-              return (
-                <tr key={ police._id }>
-                  <td>{ index + 1 }</td>
-                  <td>{ police.policeID }</td>
-                  <td>{ new Date(police.conclusionDate).toLocaleDateString() }</td>
-                  <td>{ new Date(police.expirationDate).toLocaleDateString() }</td>
-                  <td>
-                    <Link to={`/detail/${police._id}`}>Просмотр</Link>
-                  </td>
-                </tr>
-              );
-            })
-          }
-        </tbody>
-      </table>
+      { <InsurancePoliceCard insurancePolice={ healthPolice } /> }
 
       <div className="actionButtons">
         <button className="blue darken-1"><NavLink to="/personal-change" style={{ color: "white" }}>Изменить персональные данные</NavLink></button>
