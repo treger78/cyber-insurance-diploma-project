@@ -101,17 +101,43 @@ export const PersonalPage = () => {
 
       <h3 className="center-align">Ваши страховые полисы</h3>
 
-      <h5 className="center-align">Страховые полисы "Транспортные средства":</h5>
-      { <InsurancePoliceCard insurancePolice={ vehiclePolice } /> }
+      {
+        !vehiclePolice.length && !tripPolice.length &&
+        !estatePolice.length && !healthPolice.length &&
+        <h5 className="center-align">Похоже, что у вас нет оформленных страховых полисов!</h5>
+      }
 
-      <h5 className="center-align">Страховые полисы "Путешествия":</h5>
-      { <InsurancePoliceCard insurancePolice={ tripPolice } /> }
+      {
+        vehiclePolice.length !== 0 &&
+        <>
+          <h5 className="center-align">Страховые полисы "Транспортные средства":</h5>
+          <InsurancePoliceCard insurancePolice={ vehiclePolice } />
+        </>
+      }
 
-      <h5 className="center-align">Страховые полисы "Имущество":</h5>
-      { <InsurancePoliceCard insurancePolice={ estatePolice } /> }
+      {
+        tripPolice.length !== 0 &&
+        <>
+          <h5 className="center-align">Страховые полисы "Путешествия":</h5>
+          <InsurancePoliceCard insurancePolice={ tripPolice } />
+        </>
+      }
 
-      <h5 className="center-align">Страховые полисы "Здоровье":</h5>
-      { <InsurancePoliceCard insurancePolice={ healthPolice } /> }
+      {
+        estatePolice.length !== 0 &&
+        <>
+          <h5 className="center-align">Страховые полисы "Имущество":</h5>
+          <InsurancePoliceCard insurancePolice={ estatePolice } />
+        </>
+      }
+
+      {
+        healthPolice.length !== 0 &&
+        <>
+          <h5 className="center-align">Страховые полисы "Здоровье":</h5>
+          <InsurancePoliceCard insurancePolice={ healthPolice } />
+        </>
+      }
 
       <div className="actionButtons">
         <button className="blue darken-1"><NavLink to="/personal-change" style={{ color: "white" }}>Изменить персональные данные</NavLink></button>
