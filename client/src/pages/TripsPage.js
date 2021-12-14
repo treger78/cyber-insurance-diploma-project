@@ -37,6 +37,13 @@ export const TripsPage = () => {
         return message('Заполните все поля формы!');
       }
 
+      // 1 day = 86400000 ms
+      if (
+        (new Date(form.startDateOfTrip).getTime() + 86400000) < new Date()
+      ) {
+        return message(`Дата начала поездки должна быть не раньше ${new Date().toLocaleDateString()}`);
+      }
+
       insurancePolicePrice = dayCost * form.numberOfDays;
 
       message(`Cтоимость страхового полиса составит ${insurancePolicePrice} руб.`);
