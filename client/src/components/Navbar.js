@@ -2,11 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
-  document.addEventListener('DOMContentLoaded', function() {
-    const elems = document.querySelectorAll('.sidenav');
-    window.M.Sidenav.init(elems);
-  });
-
   return (
     <header>
       <nav>
