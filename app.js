@@ -2,6 +2,9 @@ const express = require('express');
 const config = require('config');
 const path = require('path');
 const mongoose = require('mongoose');
+const https = require('https');
+const http = require('http');
+const fs = require('fs');
 
 const app = express();
 
@@ -30,6 +33,16 @@ async function start() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
+
+    // https server
+    https.createServer({
+      key: fs.readFileSync('/etc/letsencrypt/live/asfuture.ru/privkey.pem', 'utf8'),
+      cert: fs.readFileSync('/etc/letsencrypt/live/asfuture.ru/cert.pem', 'utf8'),
+      ca: fs.readFileSync('/etc/letsencrypt/live/asfuture.ru/fullchain.pem', 'utf8')
+    }, app).listen(443, () => console.log('HTTPS Server Started'));
+    
+    // http server
+    http.createServer(app).listen(PORT, () => console.log('HTTP Server Started'));
 
     app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`));
   } catch(e) {
