@@ -20,6 +20,13 @@ app.use('/api/health', require('./routes/health.routes'));
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, 'client', 'build'), { dotfiles: 'allow' }));
 
+  app.use((req, res, next) => {
+    if (!req.secure) {
+        return res.redirect("https://" + req.headers.host + req.url);
+    }
+    next()
+  });
+
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
@@ -40,7 +47,7 @@ async function start() {
       cert: fs.readFileSync('/etc/letsencrypt/live/asfuture.ru/cert.pem', 'utf8'),
       ca: fs.readFileSync('/etc/letsencrypt/live/asfuture.ru/fullchain.pem', 'utf8')
     }, app).listen(443, () => console.log('HTTPS Server Started'));
-    
+
     // http server
     http.createServer(app).listen(PORT, () => console.log('HTTP Server Started'));
 
