@@ -37,6 +37,11 @@ export const TripsPage = () => {
         return message('Заполните все поля формы!');
       }
 
+      // eslint-disable-next-line eqeqeq
+      if (Number(form.numberOfDays) != form.numberOfDays) {
+        return message('Введено неверное значение длительности поездки!');
+      }
+
       // 1 day = 86400000 ms
       if (
         (new Date(form.startDateOfTrip).getTime() + 86400000) < new Date()

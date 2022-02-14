@@ -37,6 +37,11 @@ export const EstatePage = () => {
         return message('Заполните все поля формы!');
       }
 
+      // eslint-disable-next-line eqeqeq
+      if (Number(form.objectArea) != form.objectArea) {
+        return message('Введено неверное значение площади объекта!');
+      }
+
       insurancePolicePrice = costSquareMeter * form.objectArea;
 
       message(`Cтоимость страхового полиса составит ${insurancePolicePrice} руб.`);
