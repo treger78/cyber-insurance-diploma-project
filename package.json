@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "It's my web-app for diploma project",
   "main": "app.js",
+  "homepage": "https://treger78.github.io/cyber-insurance-diploma-project/client/build",
   "scripts": {
     "start": "cross-env NODE_ENV=production node app.js",
     "server": "nodemon app.js",
